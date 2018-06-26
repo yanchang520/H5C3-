@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #myForm{
+            border: 1px solid red;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="myForm">
+        文件：<input type="file" name="myFile" id="myFile" multiple onchange="sss()">
+        <input type="submit">
+    </form>
+</body>
+</html>
+<script>
+   function sss() {
+        var body = document.querySelector('body');
+        //获取files属性
+        
+            var readerFiles = document.querySelector('#myFile').files;
+            for(var i = 0 ; i < readerFiles.length ; i++){
+                //创建一个对象
+                var reader = new FileReader();
+                //遍历
+               reader.readAsDataURL(readerFiles[i]);
+               reader.onload = function (e) {
+                   console.log(e.target);
+                   var imgstr = document.createElement('img');
+                    body.appendChild(imgstr);
+                    imgstr.src =e.target.result;
+               }
+            }
+   }
+
+</script>

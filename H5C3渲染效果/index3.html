@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        list-style: none;
+    }
+    li{
+        position: absolute;
+		left:0;
+        top:0;
+        width: 100px;
+        height: 200px;
+    }
+    li img{
+       width: 100px;
+       height: 200px;
+          
+    }
+    #container:hover{
+        animation-play-state: paused;
+        cursor: pointer;
+    }
+    li:nth-child(1){
+       
+        transform: rotateY(0deg) translateZ(200px); 
+    }
+    li:nth-child(2){
+       
+        transform: rotateY(60deg) translateZ(200px); 
+    }
+    li:nth-child(3){
+        
+        transform: rotateY(120deg) translateZ(200px); 
+    }
+    li:nth-child(4){
+       
+        transform: rotateY(180deg) translateZ(200px); 
+    }
+    li:nth-child(5){
+       
+       transform: rotateY(240deg) translateZ(200px); 
+   }
+   li:nth-child(6){
+       
+       transform: rotateY(300deg) translateZ(200px); 
+   }
+   
+
+    #container{
+        position: relative;
+        transform-style: preserve-3d;
+        height: 200px;
+        width: 100px;
+        margin:50px auto;
+        transform: translateZ(100deg);
+        background: url(images/pk2.png) no-repeat ;
+        background-size: 100px 200px ;
+        animation:hhh 20s linear infinite;
+    }
+    @-webkit-keyframes hhh{
+		0% {transform:rotateX(60deg) rotateY(0deg);}
+		100%{transform:rotateX(60deg) rotateY(360deg);}
+    }
+    
+    </style>
+</head>
+<body>
+        <p id="stage">  
+                <ul id="container">  
+                    <li>  
+                        <img src="images/pk1.png "/>  
+                    </li>  
+                    <li>  
+                        <img src="images/pk1.png"/> 
+                    </li>  
+                    <li>  
+                        <img src="images/pk1.png"/> 
+                    </li>  
+                    <li>  
+                        <img src="images/pk1.png"/>
+                    </li>  
+                    <li>  
+                            <img src="images/pk1.png"/> 
+                        </li>  
+                        <li>  
+                            <img src="images/pk1.png"/>
+                        </li>  
+                </ul>  
+            </p>  
+</body>
+</html>

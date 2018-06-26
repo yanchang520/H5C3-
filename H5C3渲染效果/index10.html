@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 100px;
+            height: 50px;
+            background: green;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 50px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+        .btn1{
+            width: 100px;
+            height: 50px;
+            background: red;
+        }
+         .btn1-b{
+             width: 100px;
+             height: 50px;
+             background: purple;
+             position: absolute;
+             left: 0;
+             top: -25px;
+             transform:translateZ(-25px) rotateX(90deg) ;
+         }  
+         .box1:hover{
+            transform-origin: center center -25px;
+            transform: rotateX(-90deg);
+         }
+        
+    </style>
+</head>
+<body>
+
+            <div class="box1">
+                <div class="btn1">WEB前端</div>
+                <div class="btn1-b">高大上学院</div>
+            </div>
+</body>
+</html>

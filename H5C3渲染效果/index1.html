@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form action="" class="box">
+         文件：<input type="file" name="myFile" id="myFile" multiple onchange="hhh();">
+        <input type="submit" value="提交">
+    </form>
+    <img src="" alt="">
+</body>
+</html>
+<script>
+
+
+    function hhh() {
+        //创建对象
+           var reader = new FileReader();
+            
+        //获取表单里的files属性，是一个集合
+           var file = document.querySelector('#myFile').files;
+        //得到file里的第一项
+           reader.readAsDataURL(file[0])
+        //加载完成后给src属性
+        reader.onload = function () {
+            document.querySelector('img').src = reader.result
+        }
+         
+              // console.log(reader.result)
+              
+    }       
+</script>   

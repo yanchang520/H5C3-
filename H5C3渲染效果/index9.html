@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>黑科技</title>
+    <style>
+        *{
+                margin: 0;
+                padding: 0;
+        }
+        .box{
+            width: 400px;
+            height: 200px;
+            position: relative;
+            margin: 100px auto;
+        }
+        .box1,
+        .box2,
+        .box3,
+        .box4{
+            width: 100px;
+            height: 50px;
+            transform-style: preserve-3d;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            transition: all 1s;
+        }
+        .btn1{
+            width: 100px;
+            height: 50px;
+            background: yellow;
+            
+        }
+        .btn1-b{
+            width: 100px;
+            height: 50px;
+            background: purple;
+            position: absolute;
+            /* float:left; */
+            top:-25px;
+            left:0;
+            transform:translateZ(-25px) rotateX(90deg);
+        }
+        .box1:hover,.box2:hover,.box3:hover,.box4:hover{
+            cursor: pointer;
+            transform-origin: center center -25px;
+            transform: rotateX(-90deg);
+        }
+        
+    </style>
+</head>
+<body>
+   <div class="box">
+       <div class="box1">
+           <div class="btn1">WEB前端</div>
+           <div class="btn1-b">高大上学院</div>
+       </div>
+       <div class="box2">
+            <div class="btn1">WEB前端</div>
+            <div class="btn1-b">高大上学院</div>
+        </div>
+        <div class="box3">
+                <div class="btn1">WEB前端</div>
+                <div class="btn1-b">高大上学院</div>
+        </div>
+        <div class="box4">
+                <div class="btn1">WEB前端</div>
+                <div class="btn1-b">高大上学院</div>
+        </div>
+   </div> 
+</body>
+</html>

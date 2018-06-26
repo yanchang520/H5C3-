@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #imgBox{
+            width: 800px;
+            height: 400px;
+            background:  url(images/banner.jpg) no-repeat center ;
+            
+            position: relative;
+        }
+        #full{
+            position: absolute;
+            bottom: 20px;
+            right: 200px;
+        }
+        #cancelFull{
+            position: absolute;
+            bottom: 20px;
+            right: 120px;
+        }
+        #isFull{
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="imgBox">
+        <input type="submit" value="全屏" id="full">
+        <input type="submit" value="退出全屏" id="cancelFull">
+        <input type="submit" value="是否是全屏" id="isFull">
+    </div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var div = document.querySelector('div');
+        document.querySelector('#full').onclick = function () {
+            console.log(111)
+            if(div.requestFullScreen){
+                div.requestFullScreen();
+            } else if (div.webkitRequestFullScreen){
+                div.webkitRequestFullScreen();
+            } else if(div.mozRequestFullScreen) {
+                div.mozRequestFullScreen();
+            } else if(div.msRequestFullScreen){
+                div.msRequestFullScreen();
+            }
+        document.querySelector('#cancelFull').onclick =function () {
+            if(document.cancelFullScreen){
+                document.cancelFullScreen();
+            } else if(document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+            } else if(document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if(document.msCancelFullScreen){
+                document.msCancelFullScreen();
+            }
+        }
+            
+        }
+    }
+
+</script>
